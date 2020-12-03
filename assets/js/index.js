@@ -11,3 +11,15 @@ if (info.contains(infoPackage)){
     let packageTitle = document.querySelectorAll(".package-title");
     packageTitle.forEach(el => el.previousElementSibling.style.border = "2px solid black");
 }
+
+// Check if the label's class matches "mild". If so, give the label a yellow solid border. If the label's class matches "intense", give the label an orange solid border. If the class does not match either, give the label a red solid border.
+let labels = document.querySelectorAll("label");
+labels.forEach(el => {
+    if (el.matches(".mild")){
+        el.style.borderBottom = "2px solid yellow";
+    } else if (el.matches(".intense")){
+        el.style.borderBottom = "2px solid orange";
+    } else {
+        el.style.borderBottom = "2px solid red";
+    }
+});
