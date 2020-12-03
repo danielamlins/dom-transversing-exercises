@@ -7,10 +7,13 @@ let header = h1.closest("header");
 // If the .info section contains an .info-package, select all package-titles and give the title's previous element a border
 let info = document.querySelector(".info");
 let infoPackage = document.querySelector(".info-package");
-if (info.contains(infoPackage)){
-    let packageTitle = document.querySelectorAll(".package-title");
-    packageTitle.forEach(el => el.previousElementSibling.style.border = "1px solid black");
+if(info){
+    if (info.contains(infoPackage)){
+        let packageTitle = document.querySelectorAll(".package-title");
+        packageTitle.forEach(el => el.previousElementSibling.style.border = "1px solid black");
+    };
 }
+
 
 // Check if the label's class matches "mild". If so, give the label a yellow solid border. If the label's class matches "intense", give the label an orange solid border. If the class does not match either, give the label a red solid border.
 let labels = document.querySelectorAll("label");
@@ -19,7 +22,7 @@ labels.forEach(el => {
         el.style.borderBottom = "4px solid yellow";
     } else if (el.matches(".intense")){
         el.style.borderBottom = "4px solid orange";
-    } else {
+    } else if(el.matches(".extreme")) {
         el.style.borderBottom = "4px solid red";
     }
 });
