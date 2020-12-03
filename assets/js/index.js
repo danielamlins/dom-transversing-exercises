@@ -23,3 +23,11 @@ labels.forEach(el => {
         el.style.borderBottom = "2px solid red";
     }
 });
+
+// Add all the children of the .nav-list to the footer's unordered list, .site-map. Note: the .nav-list should still contain its children.
+let navItems = Array.from(document.querySelector(".nav-list").children);
+let siteMap = document.querySelector(".site-map");
+navItems.forEach(el =>{
+    let cloned = el.cloneNode(true);
+    siteMap.appendChild(cloned);
+});
